@@ -6,13 +6,17 @@ void dfs(int node, int parent, vector<int> &vis, vector<int> &tin, vector<int> &
     for(auto it: adj[node]) {
         if(it == parent) continue;
         
-        if(!vis[it]) {
+        if(!vis[it]) 
+	{
             dfs(it, node, vis, tin, low, timer, adj); 
             low[node] = min(low[node], low[it]); 
-            if(low[it] > tin[node]) {
+            if(low[it] > tin[node]) 
+	    {
                 cout << node << " " << it << endl;
             }
-        } else {
+        } 
+	else 
+	{
             low[node] = min(low[node], tin[it]); 
         }
     }
